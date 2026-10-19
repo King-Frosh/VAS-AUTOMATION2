@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-space), var(--font-inter), ui-sans-serif, sans-serif;
+  --font-mono: var(--font-jbmono), ui-monospace, monospace;
+
+  --color-navy-950: #050b18;
+  --color-navy-900: #0a1428;
+  --color-navy-850: #0d1a33;
+  --color-navy-800: #122143;
+  --color-navy-700: #1a2e5c;
+  --color-navy-600: #25407f;
+  --color-navy-500: #31549f;
+
+  --color-gold-300: #eed88a;
+  --color-gold-400: #e0c05e;
+  --color-gold-500: #c9a227;
+  --color-gold-600: #a5831c;
+  --color-gold-700: #7d6314;
+
+  --color-surface: #f5f6fa;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-surface);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(201, 162, 39, 0.28);
+}
+
+/* Refined scrollbars */
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: #cbd2e0;
+  border-radius: 8px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #aab3c7;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+.sidebar-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.14);
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+/* Subtle entrance animations */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.97) translateY(6px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+@keyframes shimmer {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
+
+.anim-fade-up { animation: fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.anim-fade-in { animation: fade-in 0.4s ease both; }
+.anim-scale-in { animation: scale-in 0.25s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.anim-pulse-soft { animation: pulse-glow 2.2s ease-in-out infinite; }
+
+.stagger > *:nth-child(1) { animation-delay: 0.03s; }
+.stagger > *:nth-child(2) { animation-delay: 0.08s; }
+.stagger > *:nth-child(3) { animation-delay: 0.13s; }
+.stagger > *:nth-child(4) { animation-delay: 0.18s; }
+.stagger > *:nth-child(5) { animation-delay: 0.23s; }
+.stagger > *:nth-child(6) { animation-delay: 0.28s; }
+
+/* Glassy modal backdrop */
+.dialog-backdrop {
+  background: rgba(6, 10, 24, 0.55);
+  backdrop-filter: blur(6px);
+}
+
+/* Brand gradient text */
+.gold-text {
+  background: linear-gradient(115deg, #eed88a 0%, #c9a227 45%, #96781b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

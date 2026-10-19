@@ -1,0 +1,28 @@
+import { del, get, put } from "@vercel/blob";
+
+function readWriteToken(): string {
+  const value = process.env.BLOB_READ_WRITE_TOKEN;
+  if (!value) throw new Error("BLOB_READ_WRITE_TOKEN is not configured in the Vercel project environment.");
+  return value;
+}
+
+/** Store data in a private Vercel Blob. The existing DB file_path column stores the pathname. */
+export async function putPrivateBlob(pathname: string, data: Buffer, contentType: string): Promise<string> {
+  const result = await put(pathname, data, {
+    access: "private", addRandomSuffix: true, contentType, token: readWriteToken(),
+  });
+  return result.pathname;
+}
+
+/** Read private Blob bytes server-side. Authenticate/authorize before calling this helper. */
+export async function readPrivateBlob(pathname: string): Promise<Buffer> {
+  const result = await get(pathname, { access: "private", token: readWriteToken() });
+  if (!result || result.statusCode !== 200) throw new Error("Private Blob object was not found.");
+  const chunks: Buffer[] = [];
+  for await (const chunk of result.stream) chunks.push(Buffer.from(chunk));
+  return Buffer.concat(chunks);
+}
+
+export async function deletePrivateBlob(pathname: string): Promise<void> {
+  if (pathname) await del(pathname, { token: readWriteToken() });
+}
