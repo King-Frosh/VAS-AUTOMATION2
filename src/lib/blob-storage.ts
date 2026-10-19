@@ -18,8 +18,20 @@ export async function putPrivateBlob(pathname: string, data: Buffer, contentType
 export async function readPrivateBlob(pathname: string): Promise<Buffer> {
   const result = await get(pathname, { access: "private", token: readWriteToken() });
   if (!result || result.statusCode !== 200) throw new Error("Private Blob object was not found.");
+  // Read the Web ReadableStream with a reader instead of for-await-of.
+  // This works with TypeScript DOM stream typings that do not expose
+  // Symbol.asyncIterator on ReadableStream.
+  const reader = result.stream.getReader();
   const chunks: Buffer[] = [];
-  for await (const chunk of result.stream) chunks.push(Buffer.from(chunk));
+  try {
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      if (value) chunks.push(Buffer.from(value));
+    }
+  } finally {
+    reader.releaseLock();
+  }
   return Buffer.concat(chunks);
 }
 
