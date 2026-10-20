@@ -33,7 +33,7 @@ export default async function LoginPage() {
         />
         <div className="relative z-10 flex h-full flex-col justify-between p-12">
           <div className="flex items-center gap-4 anim-fade-up">
-            <BriccsLogo width={220} className="h-auto w-[220px] object-contain" />
+            <BriccsLogo width={44} square className="h-11 w-11 rounded-lg bg-white/5" />
             <p className="border-l border-white/15 pl-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-gold-400">
               VAS Revenue Console
             </p>
@@ -75,7 +75,7 @@ export default async function LoginPage() {
       <div className="flex flex-1 items-center justify-center px-6 py-12">
         <div className="w-full max-w-[400px] anim-scale-in">
           <div className="mb-8 flex items-center lg:hidden">
-            <BriccsLogo width={190} className="h-auto w-[190px] object-contain" />
+            <BriccsLogo width={44} square className="h-11 w-11 rounded-lg bg-white/5" />
           </div>
 
           <div className="rounded-2xl border border-slate-200/80 bg-white p-8 shadow-[0_24px_60px_-24px_rgba(10,20,40,0.25)]">
