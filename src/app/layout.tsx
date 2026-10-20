@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import { Toaster } from "sonner";
+import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -21,7 +22,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${space.variable} ${jbmono.variable}`}>
       <body className="bg-surface font-sans text-slate-800">
-        {children}
+        <ThemeProvider>{children}</ThemeProvider>
         <Toaster richColors position="top-right" closeButton toastOptions={{ style: { fontFamily: "var(--font-inter)" } }} />
       </body>
     </html>
