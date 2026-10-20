@@ -108,3 +108,32 @@ body {
   background-clip: text;
   color: transparent;
 }
+
+
+/* Theme-aware application surfaces */
+html[data-theme="dark"] { color-scheme: dark; --color-surface: #0b1220; }
+html[data-theme="light"] { color-scheme: light; --color-surface: #f5f6fa; }
+html[data-theme="dark"] body { background-color: #0b1220 !important; color: #e5eaf2 !important; }
+html[data-theme="dark"] body .bg-surface,
+html[data-theme="dark"] body .bg-white,
+html[data-theme="dark"] body [class~="bg-white/90"],
+html[data-theme="dark"] body [class~="bg-white/95"] { background-color: #111c2e !important; }
+html[data-theme="dark"] body .text-slate-900,
+html[data-theme="dark"] body .text-slate-800,
+html[data-theme="dark"] body .text-slate-700 { color: #e5eaf2 !important; }
+html[data-theme="dark"] body .text-slate-600,
+html[data-theme="dark"] body .text-slate-500,
+html[data-theme="dark"] body .text-slate-400 { color: #a8b5c8 !important; }
+html[data-theme="dark"] body [class*="border-slate-"],
+html[data-theme="dark"] body [class*="border-gray-"] { border-color: #2b3a50 !important; }
+html[data-theme="dark"] body input,
+html[data-theme="dark"] body textarea,
+html[data-theme="dark"] body select { background-color: #0f1a2b; color: #e5eaf2; border-color: #33445d; }
+html[data-theme="dark"] body input::placeholder,
+html[data-theme="dark"] body textarea::placeholder { color: #8796ad; }
+html[data-theme="dark"] body table thead,
+html[data-theme="dark"] body [class*="bg-slate-50"],
+html[data-theme="dark"] body [class*="bg-gray-50"] { background-color: #172337 !important; }
+html[data-theme="dark"] body [class*="hover:bg-slate-50"]:hover,
+html[data-theme="dark"] body [class*="hover:bg-white"]:hover { background-color: #1b2940 !important; }
+html[data-theme="dark"] body .bg-surface { background-color: #0b1220 !important; }
