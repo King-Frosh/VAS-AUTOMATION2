@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/auth";
 import { ensureDefaults } from "@/lib/seed";
 import LoginForm from "./login-form";
+import BriccsLogo from "@/components/briccs-logo";
 import { ShieldCheck, FileSpreadsheet, Send, Lock } from "lucide-react";
 
 export const dynamic = "force-dynamic";
@@ -32,12 +33,10 @@ export default async function LoginPage() {
         />
         <div className="relative z-10 flex h-full flex-col justify-between p-12">
           <div className="flex items-center gap-3 anim-fade-up">
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-gold-300 to-gold-600 shadow-lg shadow-gold-600/30">
-              <span className="font-display text-xl font-bold text-navy-950">B</span>
-            </div>
-            <div>
-              <p className="font-display text-[15px] font-semibold tracking-wide text-white">BRICCS INTERNATIONAL</p>
-              <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold-400">Ideal Limited</p>
+            <BriccsLogo width={44} square className="h-11 w-11 rounded-lg bg-white/5" />
+            <div className="min-w-0">
+              <p className="font-display text-[12px] font-bold leading-tight tracking-wide text-white">BRICCS INTERNATIONAL IDEAL LIMITED</p>
+              <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-gold-400">VAS Revenue Console</p>
             </div>
           </div>
 
@@ -77,12 +76,10 @@ export default async function LoginPage() {
       <div className="flex flex-1 items-center justify-center px-6 py-12">
         <div className="w-full max-w-[400px] anim-scale-in">
           <div className="mb-8 flex items-center gap-3 lg:hidden">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-gold-300 to-gold-600">
-              <span className="font-display text-lg font-bold text-navy-950">B</span>
-            </div>
-            <div>
-              <p className="font-display text-sm font-semibold tracking-wide text-navy-900">BRICCS INTERNATIONAL</p>
-              <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-gold-600">Ideal Limited</p>
+            <BriccsLogo width={44} square className="h-11 w-11 rounded-lg bg-white/5" />
+            <div className="min-w-0">
+              <p className="font-display text-[11px] font-bold leading-tight tracking-wide text-white">BRICCS INTERNATIONAL IDEAL LIMITED</p>
+              <p className="mt-1 text-[9px] font-semibold uppercase tracking-[0.12em] text-gold-400">VAS Revenue Console</p>
             </div>
           </div>
 

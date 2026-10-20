@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
   LayoutDashboard,
@@ -24,6 +23,7 @@ import {
 import { cn } from "@/lib/utils";
 import { logoutAction } from "@/app/actions/auth";
 import ThemeToggle from "@/components/theme-toggle";
+import BriccsLogo from "@/components/briccs-logo";
 
 interface NavItem {
   href: string;
@@ -91,17 +91,10 @@ export default function Sidebar({
       />
       {/* Brand */}
       <div className="relative flex items-center gap-3 px-4 pb-5 pt-5">
-        <Image
-          src="/briccs-logo.svg"
-          alt="BRICCS International Ideal Limited"
-          width={54}
-          height={54}
-          priority
-          className="h-12 w-12 shrink-0 rounded-lg object-contain"
-        />
+        <BriccsLogo width={44} square className="h-11 w-11 rounded-lg bg-white/5" />
         <div className="min-w-0">
-          <p className="font-display text-[12px] font-bold leading-tight tracking-wide text-white">BRICCS INTERNATIONAL</p>
-          <p className="mt-1 text-[9px] font-semibold uppercase tracking-[0.16em] text-gold-400">VAS Revenue Console</p>
+          <p className="font-display text-[10px] font-bold leading-tight tracking-wide text-white">BRICCS INTERNATIONAL IDEAL LIMITED</p>
+          <p className="mt-1 text-[9px] font-semibold uppercase tracking-[0.12em] text-gold-400">VAS Revenue Console</p>
         </div>
       </div>
 

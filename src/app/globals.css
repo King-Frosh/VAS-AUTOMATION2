@@ -137,3 +137,53 @@ html[data-theme="dark"] body [class*="bg-gray-50"] { background-color: #172337 !
 html[data-theme="dark"] body [class*="hover:bg-slate-50"]:hover,
 html[data-theme="dark"] body [class*="hover:bg-white"]:hover { background-color: #1b2940 !important; }
 html[data-theme="dark"] body .bg-surface { background-color: #0b1220 !important; }
+
+
+/* Dark-mode readability safeguards for legacy utility classes and hard-coded text colors. */
+html[data-theme="dark"] body .text-slate-950,
+html[data-theme="dark"] body .text-gray-950,
+html[data-theme="dark"] body .text-gray-900,
+html[data-theme="dark"] body .text-gray-800,
+html[data-theme="dark"] body .text-gray-700,
+html[data-theme="dark"] body .text-zinc-950,
+html[data-theme="dark"] body .text-zinc-900,
+html[data-theme="dark"] body .text-zinc-800,
+html[data-theme="dark"] body .text-neutral-900,
+html[data-theme="dark"] body .text-neutral-800,
+html[data-theme="dark"] body .text-neutral-700,
+html[data-theme="dark"] body .text-navy-950,
+html[data-theme="dark"] body .text-navy-900 {
+  color: #e8eef8 !important;
+}
+
+html[data-theme="dark"] body .text-gray-600,
+html[data-theme="dark"] body .text-gray-500,
+html[data-theme="dark"] body .text-zinc-600,
+html[data-theme="dark"] body .text-zinc-500,
+html[data-theme="dark"] body .text-neutral-600,
+html[data-theme="dark"] body .text-neutral-500 {
+  color: #aebbd0 !important;
+}
+
+html[data-theme="dark"] body [style*="color: rgb(15, 23, 42)"],
+html[data-theme="dark"] body [style*="color: rgb(17, 24, 39)"],
+html[data-theme="dark"] body [style*="color: #0f172a"],
+html[data-theme="dark"] body [style*="color: #111827"] {
+  color: #e8eef8 !important;
+}
+
+/* Keep form controls, disabled text, and table content readable in both themes. */
+html[data-theme="dark"] body input:disabled,
+html[data-theme="dark"] body textarea:disabled,
+html[data-theme="dark"] body select:disabled {
+  color: #aebbd0;
+  opacity: 1;
+}
+
+html[data-theme="dark"] body table tbody tr {
+  color: #dbe5f3;
+}
+
+html[data-theme="dark"] body .text-black {
+  color: #f8fafc !important;
+}
