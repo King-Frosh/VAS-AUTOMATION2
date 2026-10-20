@@ -93,8 +93,8 @@ export default function Sidebar({
       <div className="relative flex items-center gap-3 px-4 pb-5 pt-5">
         <BriccsLogo width={44} square className="h-11 w-11 rounded-lg bg-white/5" />
         <div className="min-w-0">
-          <p className="font-display text-[12px] font-bold leading-tight tracking-wide text-white">BRICCS INTERNATIONAL</p>
-          <p className="mt-1 text-[9px] font-semibold uppercase tracking-[0.16em] text-gold-400">VAS Revenue Console</p>
+          <p className="font-display text-[10px] font-bold leading-tight tracking-wide text-white">BRICCS INTERNATIONAL IDEAL LIMITED</p>
+          <p className="mt-1 text-[9px] font-semibold uppercase tracking-[0.12em] text-gold-400">VAS Revenue Console</p>
         </div>
       </div>
 
