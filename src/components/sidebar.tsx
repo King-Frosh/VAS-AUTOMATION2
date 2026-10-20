@@ -91,7 +91,7 @@ export default function Sidebar({
       />
       {/* Brand */}
       <div className="relative flex items-center gap-3 px-4 pb-5 pt-5">
-        <BriccsLogo width={76} className="h-auto w-[76px] shrink-0 object-contain" />
+        <BriccsLogo width={44} square className="h-11 w-11 rounded-lg bg-white/5" />
         <div className="min-w-0">
           <p className="font-display text-[12px] font-bold leading-tight tracking-wide text-white">BRICCS INTERNATIONAL</p>
           <p className="mt-1 text-[9px] font-semibold uppercase tracking-[0.16em] text-gold-400">VAS Revenue Console</p>
