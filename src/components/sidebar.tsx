@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
   LayoutDashboard,
@@ -22,6 +23,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { logoutAction } from "@/app/actions/auth";
+import ThemeToggle from "@/components/theme-toggle";
 
 interface NavItem {
   href: string;
@@ -88,13 +90,18 @@ export default function Sidebar({
         }}
       />
       {/* Brand */}
-      <div className="relative flex items-center gap-3 px-5 pb-5 pt-6">
-        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-gold-300 to-gold-600 shadow-lg shadow-gold-600/25">
-          <span className="font-display text-lg font-bold text-navy-950">B</span>
-        </div>
+      <div className="relative flex items-center gap-3 px-4 pb-5 pt-5">
+        <Image
+          src="/briccs-logo.svg"
+          alt="BRICCS International Ideal Limited"
+          width={54}
+          height={54}
+          priority
+          className="h-12 w-12 shrink-0 rounded-lg object-contain"
+        />
         <div className="min-w-0">
-          <p className="font-display text-[13.5px] font-bold leading-tight tracking-wide text-white">BRICCS INTERNATIONAL</p>
-          <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-gold-400">VAS Revenue Console</p>
+          <p className="font-display text-[12px] font-bold leading-tight tracking-wide text-white">BRICCS INTERNATIONAL</p>
+          <p className="mt-1 text-[9px] font-semibold uppercase tracking-[0.16em] text-gold-400">VAS Revenue Console</p>
         </div>
       </div>
 
@@ -142,6 +149,10 @@ export default function Sidebar({
           );
         })}
       </nav>
+
+      <div className="relative border-t border-white/[0.06] px-3 py-2">
+        <ThemeToggle />
+      </div>
 
       {/* User */}
       <div className="relative border-t border-white/[0.06] p-4">
