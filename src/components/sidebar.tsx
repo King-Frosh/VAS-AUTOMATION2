@@ -92,7 +92,7 @@ export default function Sidebar({
       {/* Brand */}
       <div className="relative flex items-center gap-3 px-4 pb-5 pt-5">
         <Image
-          src="/briccs-logo.svg"
+          src="/briccs-logo.png"
           alt="BRICCS International Ideal Limited"
           width={54}
           height={54}
