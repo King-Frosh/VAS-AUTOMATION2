@@ -32,11 +32,12 @@ export default async function LoginPage() {
           }}
         />
         <div className="relative z-10 flex h-full flex-col justify-between p-12">
-          <div className="flex items-center gap-4 anim-fade-up">
+          <div className="flex items-center gap-3 anim-fade-up">
             <BriccsLogo width={44} square className="h-11 w-11 rounded-lg bg-white/5" />
-            <p className="border-l border-white/15 pl-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-gold-400">
-              VAS Revenue Console
-            </p>
+            <div className="min-w-0">
+              <p className="font-display text-[12px] font-bold leading-tight tracking-wide text-white">BRICCS INTERNATIONAL IDEAL LIMITED</p>
+              <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-gold-400">VAS Revenue Console</p>
+            </div>
           </div>
 
           <div className="max-w-md space-y-8">
@@ -74,8 +75,12 @@ export default async function LoginPage() {
       {/* Form panel */}
       <div className="flex flex-1 items-center justify-center px-6 py-12">
         <div className="w-full max-w-[400px] anim-scale-in">
-          <div className="mb-8 flex items-center lg:hidden">
+          <div className="mb-8 flex items-center gap-3 lg:hidden">
             <BriccsLogo width={44} square className="h-11 w-11 rounded-lg bg-white/5" />
+            <div className="min-w-0">
+              <p className="font-display text-[11px] font-bold leading-tight tracking-wide text-white">BRICCS INTERNATIONAL IDEAL LIMITED</p>
+              <p className="mt-1 text-[9px] font-semibold uppercase tracking-[0.12em] text-gold-400">VAS Revenue Console</p>
+            </div>
           </div>
 
           <div className="rounded-2xl border border-slate-200/80 bg-white p-8 shadow-[0_24px_60px_-24px_rgba(10,20,40,0.25)]">
