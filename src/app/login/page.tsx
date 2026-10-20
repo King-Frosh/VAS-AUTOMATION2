@@ -2,7 +2,7 @@ import { redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/auth";
 import { ensureDefaults } from "@/lib/seed";
 import LoginForm from "./login-form";
-import Image from "next/image";
+import BriccsLogo from "@/components/briccs-logo";
 import { ShieldCheck, FileSpreadsheet, Send, Lock } from "lucide-react";
 
 export const dynamic = "force-dynamic";
@@ -33,14 +33,7 @@ export default async function LoginPage() {
         />
         <div className="relative z-10 flex h-full flex-col justify-between p-12">
           <div className="flex items-center gap-4 anim-fade-up">
-            <Image
-              src="/briccs-logo.png"
-              alt="BRICCS International Ideal Limited — We connect"
-              width={220}
-              height={123}
-              priority
-              className="h-auto w-[220px] object-contain"
-            />
+            <BriccsLogo width={220} className="h-auto w-[220px] object-contain" />
             <p className="border-l border-white/15 pl-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-gold-400">
               VAS Revenue Console
             </p>
@@ -82,14 +75,7 @@ export default async function LoginPage() {
       <div className="flex flex-1 items-center justify-center px-6 py-12">
         <div className="w-full max-w-[400px] anim-scale-in">
           <div className="mb-8 flex items-center lg:hidden">
-            <Image
-              src="/briccs-logo.png"
-              alt="BRICCS International Ideal Limited — We connect"
-              width={220}
-              height={123}
-              priority
-              className="h-auto w-[190px] object-contain"
-            />
+            <BriccsLogo width={190} className="h-auto w-[190px] object-contain" />
           </div>
 
           <div className="rounded-2xl border border-slate-200/80 bg-white p-8 shadow-[0_24px_60px_-24px_rgba(10,20,40,0.25)]">
