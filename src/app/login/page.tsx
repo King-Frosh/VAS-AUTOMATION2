@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/auth";
 import { ensureDefaults } from "@/lib/seed";
 import LoginForm from "./login-form";
+import Image from "next/image";
 import { ShieldCheck, FileSpreadsheet, Send, Lock } from "lucide-react";
 
 export const dynamic = "force-dynamic";
@@ -31,14 +32,18 @@ export default async function LoginPage() {
           }}
         />
         <div className="relative z-10 flex h-full flex-col justify-between p-12">
-          <div className="flex items-center gap-3 anim-fade-up">
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-gold-300 to-gold-600 shadow-lg shadow-gold-600/30">
-              <span className="font-display text-xl font-bold text-navy-950">B</span>
-            </div>
-            <div>
-              <p className="font-display text-[15px] font-semibold tracking-wide text-white">BRICCS INTERNATIONAL</p>
-              <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold-400">Ideal Limited</p>
-            </div>
+          <div className="flex items-center gap-4 anim-fade-up">
+            <Image
+              src="/briccs-logo.png"
+              alt="BRICCS International Ideal Limited — We connect"
+              width={220}
+              height={123}
+              priority
+              className="h-auto w-[220px] object-contain"
+            />
+            <p className="border-l border-white/15 pl-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-gold-400">
+              VAS Revenue Console
+            </p>
           </div>
 
           <div className="max-w-md space-y-8">
@@ -76,14 +81,15 @@ export default async function LoginPage() {
       {/* Form panel */}
       <div className="flex flex-1 items-center justify-center px-6 py-12">
         <div className="w-full max-w-[400px] anim-scale-in">
-          <div className="mb-8 flex items-center gap-3 lg:hidden">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-gold-300 to-gold-600">
-              <span className="font-display text-lg font-bold text-navy-950">B</span>
-            </div>
-            <div>
-              <p className="font-display text-sm font-semibold tracking-wide text-navy-900">BRICCS INTERNATIONAL</p>
-              <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-gold-600">Ideal Limited</p>
-            </div>
+          <div className="mb-8 flex items-center lg:hidden">
+            <Image
+              src="/briccs-logo.png"
+              alt="BRICCS International Ideal Limited — We connect"
+              width={220}
+              height={123}
+              priority
+              className="h-auto w-[190px] object-contain"
+            />
           </div>
 
           <div className="rounded-2xl border border-slate-200/80 bg-white p-8 shadow-[0_24px_60px_-24px_rgba(10,20,40,0.25)]">
